@@ -1,5 +1,5 @@
 class Estoque:
-  def __init__(self, id, produto_id, quantidade):
+  def __init__(self, id, id_produto, quantidade):
     self.id = id
-    self.produto_id = produto_id
+    self.id_produto = id_produto
     self.quantidade = quantidade

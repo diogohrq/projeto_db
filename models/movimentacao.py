@@ -1,9 +1,9 @@
 from datetime import datetime
 
 class Movimentacao:
-  def __init__(self, id, produto_id, tipo, quantidade, data):
+  def __init__(self, id, id_produto, tipo, quantidade, data):
     self.id = id
-    self.produto_id = produto_id
+    self.id_produto = id_produto
     self.tipo = tipo
     self.quantidade = quantidade
     self.data = data or datetime.now()
