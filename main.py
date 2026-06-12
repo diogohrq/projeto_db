@@ -1,5 +1,9 @@
-from db.connection import get_connection
+from models.categoria import Categoria
+from repositories.categoria_repo import CategoriaRepo
+from repositories.produto_repo import ProdutoRepo
 
-conn = get_connection()
-print("Conexão bem sucedida!" if conn.is_connected() else "Falhou.")
-conn.close()
+repo = ProdutoRepo()
+produtos = repo.buscar_todos()
+
+for c in produtos:
+  print(f"{c.id} - {c.nome} - {c.preco} - {c.id_categoria} - {c.id_marca}")
