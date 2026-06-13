@@ -22,6 +22,15 @@ class EstoqueRepo:
 
     return Estoque(row[0], row[1], row[2]) if row else None
 
+  def buscar_por_id_produto(self, id_produto):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, id_produto, quantidade FROM estoque WHERE id_produto = %s", (id_produto,))
+    row = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    return Estoque(row[0], row[1], row[2]) if row else None
+
   def inserir(self, estoque):
     conn = get_connection()
     cursor = conn.cursor()
